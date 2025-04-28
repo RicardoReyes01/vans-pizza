@@ -1,4 +1,4 @@
-ul {
+  ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -9,14 +9,25 @@ ul {
     justify-content: space-between;
     font-weight: bold;
   }
+
+  .item-title {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* space between the icon and the text */
+  }
+  
   
   .item-description {
     margin: 4px 0 12px 0;
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: #555;
   }
 
-    .menu-top{
+  .menu-icon{
+    color: rgb(115, 210, 248);
+  }
+
+  .menu-top{
         margin-top: 50px;
         display: flex;
         flex-wrap: wrap;
@@ -24,9 +35,9 @@ ul {
         align-items: center;
         justify-content: center;
         gap: 50px;
-    }
+  }
 
-    .menu-card {
+  .menu-card {
         display: flex;
         border-radius: 10px;
         flex-direction: column;
@@ -35,17 +46,21 @@ ul {
         background-color: white;
         color:black;
         width: 25rem;
-        min-height: 40rem;
+        min-height: 37rem;
         margin: 20px 0px;
         font-size: 1.5rem;
-    }
+  }
 
   .menu-card h1{
     color: rgb(170, 2, 2);
+    text-decoration: underline;
+    text-decoration-color: rgb(170, 2, 2);     /* change underline color */
+    text-decoration-thickness: 3px; /* make it thicker */
+    text-underline-offset: 15px;
     text-align: center;
     font-size: 3rem;
     min-height: 60px; /* Make the title space consistent */
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     margin-top: 60px;
   }
 
@@ -71,6 +86,66 @@ ul {
     justify-content: flex-start;
   }
 
+  .card2-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start; /* Align them neatly at the top */
+    gap: 30px; /* Optional: space between them */
+    position: relative; /* Needed if you want a manual divider */
+    padding: 20px;
+  }
+
+  .card2-container, .item-name-price li{
+    font-size: 22px;
+  }
+
+  .za-size, .specialty-item {
+    flex: 1; /* Each takes up equal width */
+  }
+  
+  .za-size {
+    border-right: 2px solid #ccc; /* <-- This draws a vertical line */
+    padding-right: 25px; /* Space between text and the divider */
+  }
+  
+  .specialty-item {
+    padding-left: 15px; /* Space so text isn't stuck on divider */
+  }
+  .menu-card2 ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .menu-card2 h1{
+    color: rgb(170, 2, 2);
+    text-align: center;
+    font-size: 3rem;
+    min-height: 60px; /* Make the title space consistent */
+    margin-bottom: 30px;
+    margin-top: 60px;
+    text-decoration: underline;
+    text-decoration-color: rgb(170, 2, 2);     /* change underline color */
+    text-decoration-thickness: 3px; /* make it thicker */
+    text-underline-offset: 15px;
+  }
+
+  .menu-card2 li {
+    padding: 15px;
+    border-radius: 5px;
+  }
+
+  .menu-card2 li:hover {
+    background-color:rgb(230, 230, 230);
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
   .menu-bottom{
     margin-top: 50px;
     display: flex;
@@ -79,7 +154,7 @@ ul {
     align-items: center;
     justify-content: center;
     gap: 50px;
-}
+  }
 
   .menu-card2 {
     display: flex;
@@ -90,7 +165,56 @@ ul {
     background-color: white;
     color:black;
     width: 45rem;
-    height: 25rem;
+    height:67rem;
     margin: 20px 0px;
     font-size: 1.5rem;
   }
+
+  .menu-card3 {
+    display: flex;
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    background-color: white;
+    color:black;
+    width: 45rem;
+    height:68rem;
+    margin: 20px 0px;
+    font-size: 1.5rem;
+  }
+  
+  .menu-card3 h1{
+    text-decoration: underline;
+    text-decoration-color: rgb(170, 2, 2);     /* change underline color */
+    text-decoration-thickness: 3px; /* make it thicker */
+    text-underline-offset: 15px;
+  }
+
+  .menu-card3 li {
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .menu-card3 .card2-container li:hover {
+    background-color:rgb(230, 230, 230);
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .toppings {
+    display: flex;
+    flex-direction: row; /* side by side */
+    margin: 0px;
+    padding-left: 10px;
+  }
+  
+  .toppings span{
+    text-decoration: underline;
+    text-decoration-color: rgb(170, 2, 2);     /* change underline color */
+    text-decoration-thickness: 3px; /* make it thicker */
+    text-underline-offset: 4px;
+    padding-bottom: 5px;
+  }
+  

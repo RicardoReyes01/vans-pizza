@@ -1,10 +1,15 @@
 import { Link } from 'react-router-dom';
+import { motion, useScroll, useTransform } from "framer-motion";
 import './Navbar.css'
 
 export default function Navbar(){
     return(
         <nav className="nav-bar">
-            <img className="logo" src="/src/content/vans-logo.webp" />
+            <motion.img 
+                animate={{rotate: 360}}
+                transition={{ duration: 5, repeat: Infinity, ease: "linear", }}
+                className="logo" 
+                src="/src/content/vans-logo.webp" />
         <ul>
            <li>
                 <Link to="/">Home</Link>

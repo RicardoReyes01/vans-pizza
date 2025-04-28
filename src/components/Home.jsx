@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css'
+import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function Home() {
     const [fade, setFade] = useState(true);
@@ -47,34 +48,67 @@ export default function Home() {
             <p className={`quote-text ${fade ? 'fade-in' : 'fade-out'}`}>&ldquo;{quotes[currentQuote]}&rdquo;</p>            
             <p className="star-rating">{stars(ratings[currentQuote])}</p>
           </div>
-                <img src="/src/content/za-2.jpg" className='building'/>
+                <motion.img 
+                  src="/src/content/building2.png" 
+                  className='building'
+                  initial={{ opacity: 0, y: -50 }}
+                  whileInView={{opacity: 1, y: 0}}
+                  transition={{
+                    duration: 0.9,
+                    delay: 0.4, // adjust this for each card individually
+                  }}
+                />
                 <img src="/src/content/award.png" className='award'/>
-        </div>
+          </div>
             <div className='home-body'>
-                <div className="card">
+                <motion.div 
+                  className="card"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{opacity: 1, y: 0}}
+                  transition={{
+                    duration: 0.5,
+                    delay: 0.2, // adjust this for each card individually
+                  }}
+                >
                     <img className="card-pics"src='/src/content/za-1.png'/>
                     <h1 className='card-title'>Menu</h1>
                     <p className='card-p'>Check out our menu items</p>
                     <button className="card-button">
                       <Link to='/menu'>View</Link>
                     </button>        
-                </div>
-                <div className="card">
+                </motion.div>
+                <motion.div 
+                  className="card"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{opacity: 1, y: 0}}
+                  transition={{
+                    duration: 0.5,
+                    delay: 0.35, // adjust this for each card individually
+                  }}
+                >
                     <img className="card-pics"src='/src/content/group.jpg'/>
                     <h1 className='card-title'>About</h1>
                     <p className='card-p'>Learn more about our community</p>
                     <button className="card-button">
                     <Link to='/about'>Learn</Link>
                     </button>
-                </div>
-                <div className="card">
+                </motion.div>
+                <motion.div 
+                  className="card"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{opacity: 100, y: 0}}
+                  transition={{
+                    duration: 0.5,
+                    delay: 0.45, // adjust this for each card individually
+                  }}
+                >
                     <img className="card-pics"src='/src/content/bowl.jpg'/>
                     <h1 className='card-title'>Contact</h1>
                     <p className='card-p'>Get in touch with us for orders and events</p>
                     <button className="card-button">
                     <Link to='contact'>Contact</Link>
                     </button>
-                </div>
+                </motion.div>
             </div>
         </>
     );
