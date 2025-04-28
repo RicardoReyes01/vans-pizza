@@ -1,0 +1,38 @@
+.nav-bar {
+    background: rgb(230, 230, 230);
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+  .nav-bar ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    font-size: 2rem;
+    margin-right: 3rem;
+  }
+  
+  .nav-bar ul li {
+    cursor: pointer;
+    transition: color 0.5s ease, transform 0.3s ease; 
+  }
+
+  .nav-bar ul li:hover {
+    color: rgb(170, 2, 2); 
+    transform: scale(1.2); 
+  }  
+
+  .logo{
+    height: 7rem;
+    margin-left: 3rem;
+    border-radius: 50%;
+  }
+
+  .nav-bar ul li a {
+    text-decoration: none;
+    color: inherit; /* makes it same color as your li */
+  }
