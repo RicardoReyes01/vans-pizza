@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css'
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function Home() {
     const [fade, setFade] = useState(true);
@@ -15,7 +15,7 @@ export default function Home() {
       "We went here for a few drinks and to watch the football game. The staff are very friendly, and the food was excellent.!"
     ];
   
-    const ratings = [5, 5, 5, 4, 5, 5]; // Ratings for each quote
+    const ratings = [5, 4, 5, 4, 5, 5]; // Ratings for each quote
   
     const [currentQuote, setCurrentQuote] = useState(0);
   
@@ -28,7 +28,7 @@ export default function Home() {
       setCurrentQuote((prevQuote) => (prevQuote + 1) % quotes.length);
       setFade(true); // start fade-in
     }, 500); // wait 0.5 seconds before changing quote
-    }, 6000); // 6 seconds
+    }, 5000); // 6 seconds
   
       return () => clearInterval(interval);
     }, []);
@@ -46,31 +46,34 @@ export default function Home() {
         <div className='home-header'>
           <div className="za">
             <p className={`quote-text ${fade ? 'fade-in' : 'fade-out'}`}>&ldquo;{quotes[currentQuote]}&rdquo;</p>            
-            <p className="star-rating">{stars(ratings[currentQuote])}</p>
+            <p className={`star-rating ${fade ? 'fade-in' : 'fade-out'}`}>{stars(ratings[currentQuote])}</p>
           </div>
+          <div className='main-imgs'>
                 <motion.img 
-                  src="/src/content/building2.png" 
+                  src="/public/content/building2.png" 
                   className='building'
                   initial={{ opacity: 0, y: -50 }}
                   whileInView={{opacity: 1, y: 0}}
                   transition={{
-                    duration: 0.9,
-                    delay: 0.4, // adjust this for each card individually
+                    duration: 1,
+                    delay: 0.5, // adjust this for each card individually
                   }}
                 />
-                <img src="/src/content/award.png" className='award'/>
+                <img src="content/award.png" className='award'/>
+            </div>
           </div>
+          
             <div className='home-body'>
                 <motion.div 
                   className="card"
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{opacity: 1, y: 0}}
+                  initial={{ opacity: 0, x: -50 }}
+                  whileInView={{opacity: 1, x: 0}}
                   transition={{
                     duration: 0.5,
                     delay: 0.2, // adjust this for each card individually
                   }}
                 >
-                    <img className="card-pics"src='/src/content/za-1.png'/>
+                    <img className="card-pics"src='content/za-2.jpg'/>
                     <h1 className='card-title'>Menu</h1>
                     <p className='card-p'>Check out our menu items</p>
                     <button className="card-button">
@@ -83,10 +86,10 @@ export default function Home() {
                   whileInView={{opacity: 1, y: 0}}
                   transition={{
                     duration: 0.5,
-                    delay: 0.35, // adjust this for each card individually
+                    delay: 0.4, // adjust this for each card individually
                   }}
                 >
-                    <img className="card-pics"src='/src/content/group.jpg'/>
+                    <img className="card-pics"src='content/group.jpg'/>
                     <h1 className='card-title'>About</h1>
                     <p className='card-p'>Learn more about our community</p>
                     <button className="card-button">
@@ -95,14 +98,14 @@ export default function Home() {
                 </motion.div>
                 <motion.div 
                   className="card"
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{opacity: 100, y: 0}}
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{opacity: 100, x: 0}}
                   transition={{
                     duration: 0.5,
-                    delay: 0.45, // adjust this for each card individually
+                    delay: 0.6, // adjust this for each card individually
                   }}
                 >
-                    <img className="card-pics"src='/src/content/bowl.jpg'/>
+                    <img className="card-pics"src='content/bowl.jpg'/>
                     <h1 className='card-title'>Contact</h1>
                     <p className='card-p'>Get in touch with us for orders and events</p>
                     <button className="card-button">

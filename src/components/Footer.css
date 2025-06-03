@@ -14,11 +14,10 @@
 
   .footer-icons a {
     color: white;
-    transition: color 0.3s ease, transform 0.4s ease;  }
+    transition: color 0.3s ease, transform 0.4s ease;  
+  }
   
   .footer-icons a:hover {
     color: rgb(170, 2, 2);
     transform: scale(1.3); /* Facebook blue on hover */
   }
-  
-  

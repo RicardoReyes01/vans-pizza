@@ -1,12 +1,22 @@
 import './Menu.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFireFlameCurved } from '@fortawesome/free-solid-svg-icons';
+import { motion } from "framer-motion";
+
 
 export default function Menu(){
     return(
         <>
             <div className='menu-top'>
-                <div className="menu-card">
+                <motion.div 
+                    className="menu-card"
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{opacity: 1, y: 0}}
+                    transition={{
+                    duration: 0.5,
+                    delay: 0.2, // adjust this for each card individually
+                  }}
+                >
                     <h1 className='card-title'>Appetizers</h1>
                     <ul>
                         <li>
@@ -27,8 +37,16 @@ export default function Menu(){
                             <p className="item-description">Juicy chicken wings baked until crispy, then tossed in our signature spicy buffalo sauce. Served with a side of ranch dressing for the perfect balance of heat and cool.</p>
                         </li>
                     </ul>
-                </div>
-                <div className="menu-card">
+                </motion.div>
+                <motion.div 
+                    className="menu-card"
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{opacity: 1, y: 0}}
+                    transition={{
+                        duration: 0.5,
+                        delay: 0.4, // adjust this for each card individually
+                    }}
+                >
                     <h1 className='card-title'>Salads</h1>
                     <ul>
                         <li>
@@ -53,8 +71,16 @@ export default function Menu(){
                             <p className="item-description">A simple mix of greens, tomatoes, cucumbers, and carrots served with your choice of dressing.</p>
                             </li>
                     </ul>
-                </div>
-                <div className="menu-card">
+                </motion.div>
+                <motion.div 
+                    className="menu-card"
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{opacity: 1, y: 0}}
+                    transition={{
+                        duration: 0.5,
+                        delay: 0.4,
+                    }}
+                >
                     <h1 className='card-title'>Sandwiches</h1>
                     <ul>
                         <li><div className="item-name-price">
@@ -68,8 +94,16 @@ export default function Menu(){
                             </div>
                             <p className="item-description">Crisp lettuce with tomatoes, cucumbers, olives, onions, and feta cheese, tossed in a light vinaigrette.</p></li>
                     </ul>
-                </div>
-                <div className="menu-card">
+                </motion.div>
+                <motion.div 
+                    className="menu-card"
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{opacity: 1, y: 0}}
+                    transition={{
+                        duration: 0.5,
+                        delay: 0.2,
+                    }}
+                >
                     <h1 className='card-title'>Pasta</h1>
                     <ul>
                         <li>
@@ -80,7 +114,7 @@ export default function Menu(){
                             <p className="item-description">Crisp lettuce with tomatoes, cucumbers, olives, onions, and feta cheese, tossed in a light vinaigrette.</p>
                             </li>
                     </ul>
-                </div>
+                </motion.div>
             </div>
             <div className='menu-bottom'>
                 <div className="menu-card2">

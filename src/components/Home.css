@@ -1,41 +1,73 @@
 * {
     box-sizing: border-box;
   }
-
+html, body {
+  overflow-x: hidden;
+}
 .home-header{
-    margin-top: 100px;
-    margin-bottom: 100px;
     display: flex;
+    position: relative;
+    margin-top: 90px;
+    width: 100%;
+    margin-bottom: 100px;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 10rem;
+    gap: 6rem;
 }
+
+.za {
+  padding: 35px;
+  border-radius: 100px;
+  background-color: #200101;
+  border: 5px solid rgb(230, 230, 230);
+  max-width: 90vw;
+  height: 25rem;
+  text-align: center;
+}
+
+.quote-text {
+  font-size: 25px;
+  width: 100%;
+  max-width: 25rem;
+  margin-bottom: 2rem;
+  height: 4.5rem; /* locks height so layout doesn't shift */
+  
+}
+
 
 .star-rating {
-    margin-top: 200px;
-    font-size: 25px;
-  }
-
-.quote-text{
-    font-size: 25px;
-    height: 50px;
-    width: 18rem;
-    margin-bottom: 5rem;
+  margin-top: 11rem;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.award{
-    height: 20rem;
-    width: 18rem;
-    border-radius: 25%;
+
+.main-imgs {
+  position: relative;
+  width: 100%;
+  max-width: 700px; /* or whatever fits your design */
 }
 
-.building{
-    height: 30rem;
-    width: 45rem;
-    border-radius: 10px;
-    border: 4px solid rgb(230, 230, 230);
+.building {
+  width: 100%;
+  height: 35rem;
+  border-radius: 100px;
+  border: 5px solid rgb(230, 230, 230);
 }
+
+.award {
+  position: absolute;
+  bottom: 0;
+  right: -0%;
+  height: clamp(10rem, 15vw, 16rem);
+  width: clamp(8rem, 12vw, 14rem);
+  z-index: 3;
+  transform: rotate(-23deg);
+}
+
 
 .home-body{
     width: 100%;
@@ -114,3 +146,22 @@
     transition: opacity 0.5s ease-out;
 
   }  
+
+
+  @media (max-width: 768px) {
+
+ .building {
+  height: 25rem;
+}
+
+
+.star-rating {
+  margin-top: 11.5rem;
+  padding-top: 20px;
+}
+
+.za {
+  padding-top: 25px;
+}
+
+}

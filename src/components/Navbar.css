@@ -36,3 +36,37 @@
     text-decoration: none;
     color: inherit; /* makes it same color as your li */
   }
+
+  @media (max-width: 768px) {
+
+  .logo {
+    height: 7rem;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+  }
+  .nav-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-bar ul {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+    margin-top: 1rem;
+    margin-right: 0;
+  }
+
+  .nav-bar ul.open {
+    display: flex;
+  }
+
+  .nav-bar ul li {
+    padding: 0.5rem 0;
+  }
+}
